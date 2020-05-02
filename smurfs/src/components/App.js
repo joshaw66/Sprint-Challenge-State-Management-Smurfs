@@ -4,6 +4,13 @@ import axios from "axios";
 import SmurfTown from "./SmurfTown";
 import NewSmurf from "./NewSmurf";
 import context from "../contexts/context";
+import styled from 'styled-components'
+
+const SmurfHeader = styled.h1`
+  color: yellow;
+  font-size: 2.5rem;
+  margin-top: 5%;
+`
 
 export default function App() {
   const [smurfs, setSmurfs] = useState([]);
@@ -35,7 +42,7 @@ export default function App() {
   return (
     <div className="App">
       <context.Provider value={{ smurfs }}>
-        <h1>Check Out The Smurfs!</h1>
+        <SmurfHeader>Check Out The Smurfs!</SmurfHeader>
         <SmurfTown />
         <NewSmurf addSmurf={addSmurf} />
       </context.Provider>

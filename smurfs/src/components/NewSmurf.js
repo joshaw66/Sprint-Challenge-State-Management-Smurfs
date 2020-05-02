@@ -1,4 +1,13 @@
 import React, { useState } from "react";
+import styled from 'styled-components';
+
+const SmurfButton = styled.button`
+    
+`
+
+const SmurfSubmit = styled.div`
+    
+`
 
 export default function AddSmurf(props) {
   const [newSmurf, setNewSmurf] = useState({
@@ -26,7 +35,7 @@ export default function AddSmurf(props) {
   };
 
   return (
-    <>
+    <SmurfSubmit>
       <input
         type="text"
         name="name"
@@ -48,9 +57,9 @@ export default function AddSmurf(props) {
         onChange={handleChanges}
         placeholder="smurf height"
       />
-      <button className="button" onClick={handleSubmit}>
+      <SmurfButton className="button" onClick={handleSubmit}>
         Spawn New Smurf
-      </button>
-    </>
+      </SmurfButton>
+    </SmurfSubmit>
   );
 }
